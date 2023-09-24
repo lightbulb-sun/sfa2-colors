@@ -4,7 +4,7 @@
 Lets you select the six different character outfit colors
 by pressing one of the attack buttons (A, B, X, Y, L, R)
 on the character select screen
-in the US version of the SNES game
+in the US, EU and JP versions of the SNES game
 *Street Fighter Alpha 2*
 in accordance with this
 [romhacking.net post](https://www.romhacking.net/forum/index.php?msg=449057)

@@ -13,7 +13,13 @@ hirom
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Player 1
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+if defined("US")
 org $c0decb
+elseif defined("EU")
+org $c0defa
+else
+org $c0def7
+endif
 check_for_button_presses_p1:
         phb
         lda.b   #(check_for_button_presses_p1>>16)
@@ -48,10 +54,22 @@ buttons:
         dw      !MASK_BUTTON_L
         dw      !MASK_BUTTON_R
 
+if defined("US")
 org $c0df02
+elseif defined("EU")
+org $c0df31
+else
+org $c0df2e
+endif
 cont_p1:
 
+if defined("US")
 org $c0df26
+elseif defined("EU")
+org $c0df55
+else
+org $c0df52
+endif
 end_p1:
 
 
@@ -59,7 +77,13 @@ end_p1:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Player 2
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+if defined("US")
 org $c0e5f0
+elseif defined("EU")
+org $c0e61f
+else
+org $c0e61c
+endif
 check_for_button_presses_p2:
         phb
         lda.b   #(check_for_button_presses_p2>>16)
@@ -86,8 +110,20 @@ check_for_button_presses_p2:
         plb
         bra     cont_p2
 
+if defined("US")
 org $c0e62b
+elseif defined("EU")
+org $c0e65a
+else
+org $c0e657
+endif
 cont_p2:
 
+if defined("US")
 org $c0e64f
+elseif defined("EU")
+org $c0e67e
+else
+org $c0e67b
+endif
 end_p2:
